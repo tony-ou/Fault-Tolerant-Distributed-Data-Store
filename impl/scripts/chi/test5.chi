@@ -1,0 +1,45 @@
+# Start 
+start -n node-1
+start -n node-2
+start -n node-3
+start -n node-4
+start -n node-5
+start -n node-6
+start -n node-7
+
+# Check set 
+wait -t 5
+
+# create parition one with 2, one with 2 nodes, one with 1 node
+create_partition -n p1 -p node-3,node-4,node-5,node-6,node-7 -2  node-1,node-2
+# wait for reelection
+wait -t 15
+
+set -n node-3 -k A -v 1
+set -n node-4 -k B -v 2
+set -n node-5 -k C -v 3
+
+
+# Check get 
+wait -t 5 
+get -n node-3 -k A
+get -n node-4 -k A
+get -n node-5 -k A
+get -n node-6 -k A
+get -n node-7 -k A
+
+get -n node-3 -k B
+get -n node-4 -k B
+get -n node-5 -k B
+get -n node-6 -k B
+get -n node-7 -k B
+
+get -n node-3 -k C
+get -n node-4 -k C
+get -n node-5 -k C
+get -n node-6 -k C
+get -n node-7 -k C
+
+# Quit
+wait -t 3
+quit

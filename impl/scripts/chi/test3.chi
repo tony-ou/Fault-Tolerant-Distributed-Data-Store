@@ -1,0 +1,34 @@
+# Start 
+start -n node-1
+start -n node-2
+start -n node-3
+start -n node-4
+start -n node-5
+
+wait -t 5
+
+set -n node-1 -k A -v 1
+wait -t 5 
+
+fail_node -n node-1 
+#wait for reelection
+wait -t 15 
+
+
+#check set succeed
+set -n node-2 -k B -v 2
+wait -t 5 
+
+#check get succeed
+get -n node-2 -k A 
+get -n node-3 -k A
+get -n node-4 -k A
+get -n node-5 -k A
+
+get -n node-2 -k B
+get -n node-3 -k B
+get -n node-4 -k B
+get -n node-5 -k B
+
+wait -t 3
+quit

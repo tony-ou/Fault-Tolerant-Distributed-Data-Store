@@ -1,0 +1,22 @@
+# Start 
+start -n node-1
+start -n node-2
+start -n node-3
+start -n node-4
+
+# Check set 
+wait -t 5
+
+# create parition one with 2, one with 2 nodes, one with 1 node
+create_partition -n p1 -p node-1,node-2 -2  node-3,node-4
+set -n node-1 -k A -v 1
+set -n node-3 -k B -v 2
+
+# Check get 
+wait -t 5 
+get -n node-1 -k A
+get -n node-3 -k B
+
+# Quit
+wait -t 3
+quit

@@ -1,0 +1,20 @@
+# Start 
+start -n node-1
+start -n node-2
+start -n node-3
+start -n node-4
+start -n node-5
+
+wait -t 6
+fail_node -n node-1 
+
+# Check set fail 
+set -n node-1 -k A -v 2
+wait -t 5 
+
+# Check get fail 
+get -n node-1 -k A 
+
+# Quit
+wait -t 3
+quit

@@ -1,0 +1,4 @@
+ERROR: SET id=1 failed (A=1): set request error because leader cant reach majority agreement
+ERROR: SET id=2 failed (B=2): set request error because leader timeout
+ERROR: GET id=4 failed (k=B): Get request error because leader does not exist.
+ERROR: GET id=3 failed (k=A): get request error because leader stale

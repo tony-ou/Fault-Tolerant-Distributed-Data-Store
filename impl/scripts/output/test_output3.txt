@@ -1,0 +1,10 @@
+SET id=1 OK: A = 1
+SET id=2 OK: B = 2
+GET id=3 OK: A = 1
+GET id=4 OK: A = 1
+GET id=6 OK: A = 1
+GET id=5 OK: A = 1
+GET id=7 OK: B = 2
+GET id=8 OK: B = 2
+GET id=10 OK: B = 2
+GET id=9 OK: B = 2

@@ -1,0 +1,2 @@
+ERROR: SET id=1 failed (A=2): set request error because leader timeout
+ERROR: GET id=2 failed (k=A): Get request error because leader does not exist.

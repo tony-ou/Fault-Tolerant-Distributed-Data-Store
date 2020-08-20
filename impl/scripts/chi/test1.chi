@@ -1,0 +1,51 @@
+# Start 
+start -n node-1
+start -n node-2
+start -n node-3
+start -n node-4
+start -n node-5
+
+# Check set 
+wait -t 5
+set -n node-1 -k A -v 1 
+set -n node-2 -k B -v 2 
+set -n node-3 -k C -v 3 
+set -n node-4 -k D -v 4
+set -n node-5 -k E -v 5
+
+# Check get 
+wait -t 10
+get -n node-1 -k A
+get -n node-2 -k A
+get -n node-3 -k A
+get -n node-4 -k A
+get -n node-5 -k A
+
+get -n node-1 -k B
+get -n node-2 -k B
+get -n node-3 -k B
+get -n node-4 -k B
+get -n node-5 -k B
+
+get -n node-1 -k C 
+get -n node-2 -k C 
+get -n node-3 -k C 
+get -n node-4 -k C 
+get -n node-5 -k C
+
+get -n node-1 -k D 
+get -n node-2 -k D 
+get -n node-3 -k D 
+get -n node-4 -k D
+get -n node-5 -k D
+
+
+get -n node-1 -k E 
+get -n node-2 -k E 
+get -n node-3 -k E 
+get -n node-4 -k E
+get -n node-5 -k E
+
+# Quit
+wait -t 3
+quit

@@ -1,1 +1,1 @@
-UCHICAGO CMSC 23310 Project: Fault Tolerent Distributed Data Store based on Raft algorithm 
+CMSC 23310 Project: Fault Tolerent Distributed Data Store based on Raft algorithm 
